@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
     res.status(200).sendFile(path.join(__dirname+'/index.html'));
   });
 
-  app.get('/adatok', (req, res) =>{
+  app.get('/lista', (req, res) =>{
     fs.readFile('adatok.txt', (err, data)=>{
         if(err){
             res.status(500).send('Hiba a fájl megnyitásakor!')
@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
 
             records.forEach(record =>{
                 str += '<tr><td>' + i + '</td>'
-                var datas = record.split('|')
+                var datas = record.split(';')
                 datas.forEach(data =>{
                     str += '<td>' + data + '</td>'
                 })
@@ -40,13 +40,13 @@ app.get('/', function (req, res) {
     })
 })
   
-  app.post('/senddata', (req, res)=>{
+  app.post('/rogiztes', (req, res)=>{
     var Nev = req.body.Nev
     var kor = req.body.kor
     var osztaly = req.body.osztaly
     var Lakcime = req.body.Lakcime
 
-    fs.appendFile('adatok.txt', `${Nev}|${kor}|${osztaly}|${Lakcime}\n`, (err)=>{
+    fs.appendFile('adatok.txt', `${Nev};${kor};${osztaly};${Lakcime}\n`, (err)=>{
         if(err){
             res.status(500).send('Hiba a fájl mentése közben')
         } else{

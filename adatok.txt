@@ -1,6 +1,4 @@
-gf|15|12a|sasas
-Vigh Ákos|20|2/14 SZFT|Vaskút valami utca valami szám
-Szabó Péter|21|2/14 SZFT|Baja, Tél utca 10
-Korsós Ádám|24|2/14 SZFT|Holdon
-Kiss Pista|24|2/14 SZFT|Holdon
-Nagy Petra|18|2/14 SZFT|Holdon
+
+Nagy Petra;;2/14 SZFT;Holdon
+Nagy Petra;18;2/14 SZFT;dad
+Nagy Petra;18;2/14 SZFT;dad
